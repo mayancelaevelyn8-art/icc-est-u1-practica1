@@ -15,7 +15,7 @@ public class Estudiante implements Comparable<Estudiante> {
         if (edad <= 0) {
             throw new IllegalArgumentException("La edad debe ser positiva");
         }
-        if (Double.isNaN(nota) || nota < 0 || nota > 10) {
+        if (!Double.isFinite(nota) || nota < 0 || nota > 10) {
             throw new IllegalArgumentException("La nota debe estar entre 0 y 10");
         }
         this.codigo = codigo;
